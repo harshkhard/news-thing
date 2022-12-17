@@ -51,13 +51,13 @@ public class NewsApi {
     @Autowired
     private ElasticsearchTemplate elasticsearchTemplate;
 
-    @Scheduled(cron = "0 11 * * * *")
+    @Scheduled(cron = "0 1 * * * *")
     public void getDataFromApi() {
         RestTemplate restTemplate = new RestTemplate();
         Map<String, String> params = new HashMap<>();
         params.put("page", String.valueOf(0));
         List<NewsPojo> newsPojos = new ArrayList<>();
-        for (int i = 1; i < 50; i++) {
+        for (int i = 1; i < 5; i++) {
             NewsNetworkPojo res = restTemplate.getForObject(uri, NewsNetworkPojo.class, params);
             params.replace("page", String.valueOf(i));
             if (Objects.nonNull(res) && Objects.nonNull(res.getResults())) {
