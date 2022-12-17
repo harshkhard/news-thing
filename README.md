@@ -1,5 +1,5 @@
-# news-thing
-News App(Backend) Using PostgresSQL, Elastic, Redis. 
+# News-thing
+News App(Backend) Using Spring Boot, PostgresSQL, Elastic, Redis.
 
 # Description
 App to fetch news articles from https://newsdata.io/ and save it in multiple data stores for processing.
